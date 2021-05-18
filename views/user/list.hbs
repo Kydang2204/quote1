@@ -1,0 +1,17 @@
+<h3><a href="/quote/" class="btn btn-primary btn-sm">Add Quote</a>List Quote</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Quotes</th>
+    </tr>
+    {{#each quotes}}
+    <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.quote}}</td>
+        <td><a href="/quote/edit/{{this._id}}" class="btn btn-primary btn-sm">Edit</a></td>
+        <td><a href="/quote/edit/{{this._id}}" class="btn btn-danger btn-sm">Delete</a></td>
+    </tr>
+    {{/each}}
+
+</table>
