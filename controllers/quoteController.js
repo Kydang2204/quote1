@@ -5,7 +5,7 @@ const app = express();
 
 app.get('/',(req,res)=>
 {
-    res.render('user/quote.hbs',{title:"Form input"});
+    res.render('user/quote.handlebars',{title:"Form input"});
 })
 app.post('/add',async(req,res)=>
 {
@@ -20,7 +20,7 @@ app.post('/add',async(req,res)=>
 
 app.get('/list',(req,res)=>{
      quote.find({}).then(quotes=>{
-        res.render('user/list.hbs',
+        res.render('user/list.handlebars',
         {quotes:quotes.map(quote=>quote.toJSON())}
      )})});
      
@@ -29,7 +29,7 @@ app.get('/edit/:id',(req,res)=>{
     {
         if(!err)
         {
-            res.render('user/quote.hbs',{
+            res.render('user/quote.handlebars',{
             title:"Update quote",    
             q:q.toJSON()}
         )}
@@ -41,7 +41,7 @@ function addrecord(req,res){
     const q=new quote(req.body);
     try{
          q.save();
-        res.render('user/quote.hbs',{title:"Input quote successful"})
+        res.render('user/quote.handlebars',{title:"Input quote successful"})
 
     }catch{ (error)=>{
         res.status(500).send(error);
@@ -57,7 +57,7 @@ function updaterecord(req,res)
             res.redirect('/quote/list');
         }else{
             console.log(err);
-            res.render('user/add.hbs',{
+            res.render('user/add.handlebars',{
                 title:'Error update'
             })
         }

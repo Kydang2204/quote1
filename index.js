@@ -18,8 +18,8 @@ const port = 4000;
 //app.use(bodyParser.urlencoded({ extended: false }));
 
 mongoose.connect(url, { useUnifiedTopology: true,useNewUrlParser:true })
-app.engine('.hbs',hdbs());
-app.set('view engine', '.hbs');
+app.engine('.handlebars',hdbs());
+app.set('view engine', '.handlebars');
 //app.use(router);
 app.use('/quote',quotecontroller);
 console.log('Connected to Database');
