@@ -14,13 +14,15 @@ app.use(express.json());
 
 // app.use(bodyParser.urlencoded({ extended: false }));
 
-mongoose.
+mongoose
 
-
-connect(url, { useUnifiedTopology: true, useNewUrlParser: true });
+  .connect(url, { useUnifiedTopology: true, useNewUrlParser: true });
 app.engine('.handlebars', hdbs());
 app.set('view engine', '.handlebars');
 // app.use(router);
+
+
+
 app.use('/quote', quotecontroller);
 console.log('Connected to Database');
 app.listen(process.env.PORT, () => console.log(`Server is using port ${process.env.PORT}`));
