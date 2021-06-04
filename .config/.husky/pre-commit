@@ -1,0 +1,4 @@
+.config/.husky/pre-commit
+
+npm start
+
