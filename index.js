@@ -1,14 +1,10 @@
-require('dotenv').config();
+require('dotenv').config({ path: '.config/.env' });
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 // const router=require('./routes/quoteroute')
 const hdbs = require('express-handlebars');
 const quotecontroller = require('./controllers/quoteController');
-
-
-
-
 
 const url = `mongodb+srv://andy:${process.env.MK}@cluster0.ixw6l.mongodb.net/abc?retryWrites=true&w=majority`;
 const app = express();
