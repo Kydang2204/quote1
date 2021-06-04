@@ -2,7 +2,6 @@ require('dotenv').config({ path: '.config/.env' });
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const path = require('path');
 // const router=require('./routes/quoteroute')
 const hdbs = require('express-handlebars');
 const quotecontroller = require('./controllers/quoteController');
