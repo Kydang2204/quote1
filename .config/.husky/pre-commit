@@ -1,4 +1,4 @@
-.config/.husky/pre-commit
+.config/.husky
 
 npm start
 
