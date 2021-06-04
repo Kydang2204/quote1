@@ -2,6 +2,7 @@ require('dotenv').config({ path: '.config/.env' });
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const path = require('path');
 // const router=require('./routes/quoteroute')
 const hdbs = require('express-handlebars');
 const quotecontroller = require('./controllers/quoteController');
@@ -14,13 +15,11 @@ app.use(express.json());
 
 // app.use(bodyParser.urlencoded({ extended: false }));
 
-mongoose
-
-  .connect(url, { useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connect(url, { useUnifiedTopology: true, useNewUrlParser: true });
 app.engine('.handlebars', hdbs());
 app.set('view engine', '.handlebars');
 // app.use(router);
 
-app.use('/quote', quotecontroller);
+app.use('/quotes', quotecontroller);
 console.log('Connected to Database');
 app.listen(process.env.PORT, () => console.log(`Server is using port ${process.env.PORT}`));

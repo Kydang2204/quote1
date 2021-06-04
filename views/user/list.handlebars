@@ -1,0 +1,19 @@
+<h3 class="mt-4"><a href="/quotes/" class="btn btn-primary btn-sm mr-4 ">Add Quote</a>List Quote</h3>
+
+<table class="table table-bordered mt-4">
+    <tr>
+        <th>Name</th>
+        <th>Quotes</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {{#each quotes}}
+    <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.quote}}</td>
+        <td><a href="/quotes/edit/{{this._id}}" class="btn btn-primary btn-sm">Edit</a></td>
+        <td><a href="/quotes/delete/{{this._id}}" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">Delete</a></td>
+    </tr>
+    {{/each}}
+
+</table>
