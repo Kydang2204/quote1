@@ -6,6 +6,12 @@ const mongoose = require('mongoose');
 const hdbs = require('express-handlebars');
 const quotecontroller = require('./controllers/quoteController');
 
+
+
+
+
+
+
 const url = `mongodb+srv://andy:${process.env.MK}@cluster0.ixw6l.mongodb.net/abc?retryWrites=true&w=majority`;
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
