@@ -14,10 +14,6 @@ app.use(express.json());
 
 // app.use(bodyParser.urlencoded({ extended: false }));
 
-
-
-
-
 mongoose.connect(url, { useUnifiedTopology: true, useNewUrlParser: true });
 app.engine('.handlebars', hdbs());
 app.set('view engine', '.handlebars');
