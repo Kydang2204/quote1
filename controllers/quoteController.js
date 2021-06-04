@@ -7,6 +7,10 @@ function addrecord(req, res) {
   const q = new Quote(req.body);
 
   try {
+
+
+
+    
     q.save();
     res.render('user/quote.handlebars', { title: 'Input quote successful' });
   } catch {
