@@ -1,2 +1,2 @@
-# .husky/pre-commit
+
 eslint ./ --fix
